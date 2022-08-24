@@ -1,0 +1,20 @@
+<%layout('./partials/boilerplate.ejs')%>
+
+<div>
+    Welcome back, <%=currentUser.username%>
+</div>
+
+<div id="feedDiv">
+    <div id="postsDiv">
+        <h4 class="display-6" id="feedHeader">Daily Feed</h4>
+        <%Object.keys(comFeedData).forEach(function (element, index) {%>
+            <div class="post">
+               <p><%=element%></p> 
+               <p><%=comFeedData[element].post.text%></p> 
+
+            </div>
+            <p class="post"><%=element.name%></p>
+       <%})%>
+    </div>
+    
+</div>

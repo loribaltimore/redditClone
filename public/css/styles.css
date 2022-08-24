@@ -1,0 +1,32 @@
+.loginDiv{
+    position: relative;
+    top: 5rem;
+    left: 25%;
+    padding: 2rem;
+    padding-top: .5rem;
+    max-width: 40rem;
+    border: 1px solid black;
+}
+.loginHeader{
+    color: rgb(128, 27, 27, 50%);
+}
+.signup-input{
+    max-width: 20rem;
+}
+
+#feedDiv{
+    width: 50%;
+    height: 50rem;
+    border: 2px solid black;
+    position: relative;
+    left: 25%;
+}
+.post{
+    border: 1px solid gray;
+    margin: .25%;
+}
+#feedHeader{
+    padding-top: 2%;
+    padding-bottom: 1%;
+    padding-left: 4%;
+}

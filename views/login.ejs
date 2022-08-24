@@ -1,0 +1,29 @@
+<%-layout('./partials/boilerplate.ejs')%>
+<div class="loginDiv row">
+    <div>
+        <h3 class="display-5 loginHeader">Login</h3>
+    </div>
+<div class="loginFormDiv">
+<form action="http://localhost:3000/" method="post">
+<input type="text" placeholder="username" name="username">
+<input type="password" placeholder="password" name="password">
+<button type="submit">Login</button>
+</form>
+</div>
+<div>
+    <h5>or</h5>
+    <h3 class="display-5 loginHeader">Sign Up</h3>
+</div>
+<div class="signupFormDiv row">
+<form action="http://localhost:3000/signup" method="post" enctype="multipart/form-data" class="row">
+<input type="text" placeholder="username" class="signup-input" name="username">
+<input type="email" placeholder="email address" class="signup-input" name="email">
+<input type="password" placeholder="password" class="signup-input" name="password">
+<input type="password" placeholder="confirm password" class="signup-input" name="confirmPassword">
+<input type="text" placeholder="name" class="signup-input" name="name">
+<input type="text" placeholder="date of birth" class="signup-input" name="dob">
+<input type="file" multiple name="img">
+<button type="submit">Sign Up</button>
+</form>
+</div>
+</div>

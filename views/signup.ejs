@@ -1,0 +1,17 @@
+<%-layout('./partials/boilerplate.ejs')%>
+
+<div class="signupDiv row">
+    <div>
+        <h3 class="display-5 signupHeader">Sign Up</h3>
+    </div>
+<div class="signupFormDiv">
+<form action="http://localhost:3000/signup" method="post" enctype="multipart/form-data">
+<input type="text" placeholder="username">
+<input type="email" placeholder="email address">
+<input type="text" placeholder="name">
+<input type="text" placeholder="date of birth">
+<input type="file" multiple>
+<button type="submit">Login</button>
+</form>
+</div>
+</div>

@@ -1,0 +1,33 @@
+<%-layout('./partials/boilerplate.ejs')%>
+<div class="loginDiv row">
+    
+<div>
+    <h3 class="display-5 loginHeader">Create Community</h3>
+</div>
+<div class="communityFormDiv row">
+<form action="http://localhost:3000/<%=currentUser.id%>/communities/create" method="post" enctype="multipart/form-data" class="row">
+<input type="text" placeholder="Community Name" class="community-input" name="name">
+<input type="text" placeholder="Description" class="community-input" name="desc">
+<select class="form-select" multiple aria-label="multiple select example" name="category">
+    <option selected>Category</option>
+    <option value="politics">Politics</option>
+    <option value="comedy">Comedy</option>
+    <option value="art">Art</option>
+    <option value="news">News</option>
+  </select>
+
+<input type="file" multiple name="img">
+
+<div id="rules" class="row">
+    <h3 class="loginHeader display-6">Rules</h3>
+    <div id="ruleList" class="row">
+    <input type="text" name=rules[] placeholder="Rule 1" class="rule">
+    <input type="text" name=rules[] placeholder="Rule 2" class="rule">
+    <input type="text" name=rules[] placeholder="Rule 3" class="rule">
+</div>
+    <button id="addRule" type="button">Add Rule</button>
+</div>
+<button type="submit">Create Community</button>
+</form>
+</div>
+</div>

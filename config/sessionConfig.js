@@ -13,7 +13,8 @@ module.exports.sessionConfig = {
         sameSite: true,
         secure: process.env.NODE_env !== 'production' ?
             false : true,
-        maxAge: 604800000
+        maxAge: 604800000,
+        httpOnly: true
         ///session Config Refresher
     }
 };

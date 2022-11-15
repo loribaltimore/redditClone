@@ -107,6 +107,15 @@ comSchema.method('ban', async (comId, userId) => {
     await currentCom.save();
 });
 
+comSchema.method('getPosts', async(comId, start = 0, amount = 10) => {
+    let currentCom = await Com.findById(comId);
+    let posts = await currentCom.populate({ path: 'posts' })
+        .then(data => { return data.posts }).catch(err => console.log(err));
+    if (posts.length < amount) {
+        return posts
+    } else { return posts.slice(start, amount) };
+})
+
 let Com = model('com', comSchema);
 
 module.exports = Com;

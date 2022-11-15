@@ -1,0 +1,28 @@
+<%-layout('./partials/boilerplate')%>
+
+<div class="post row">
+    <div class="postHeader">
+       <h3 class="display-6"><%=currentCom.name%></h3> 
+    </div>
+    <div class="postBody">
+        <p>
+            <%=currentPost.text%>
+        </p>
+        <%if (currentPost.img.length){%>
+         <%-include('./partials/postImgCarousel')%>
+       <%}%>
+    </div>
+    <div class="postFooter row">
+           <div class="col">
+                Comment <%=currentPost.comments.length%>
+           </div>
+           <div class="col">
+                Like <%=currentPost.likes%>
+           </div>
+           <div class="col">
+                Share
+           </div>
+    </div>
+    
+</div>
+<%-include('./partials/postComments')%>

@@ -43,6 +43,17 @@ let userSchema = new Schema({
             ref: 'post'
         }
     ],
+    likedPosts: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'post'
+        }
+    ],
+    comments: [
+        {
+            type: Object
+        }
+    ],
     totalLikes: {
         type: Number,
         min: 0,

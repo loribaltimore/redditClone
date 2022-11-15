@@ -7,6 +7,7 @@ let storage = require('../../config/cloudinaryConfig');
 let upload = multer({ storage: storage });
 let passport = require('passport');
 let localStrategy = require('passport-local');
+
 userRouter.use(locals);
 
 userRouter.route('/')
@@ -18,6 +19,8 @@ userRouter.route('/signup')
 
 userRouter.route('/home')
     .get(renderHome);
+
+
 
 
 module.exports = userRouter;

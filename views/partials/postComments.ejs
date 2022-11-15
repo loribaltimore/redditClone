@@ -1,0 +1,27 @@
+<div class="postComments"> 
+    <%currentPost.comments.forEach(function(element, index){%>
+        <%let commentedAt = undefined%>
+        <%let incrementsOfTime = undefined%>
+        <% if (Date.now() - (element.createdAt) > 86400000){%>
+         <%   commentedAt = Math.floor((Date.now() - element.createdAt) / 86400000)%>
+         <%incrementsOfTime = 'days'%>
+        <%} else if (Date.now() - (element.createdAt) > 3600000){%>
+            <%   commentedAt = Math.floor((Date.now() - element.createdAt) / 3600000)%>
+            <%incrementsOfTime = 'hours'%>
+            <%} else if (Date.now() - (element.createdAt) > 60000){%>
+                <%   commentedAt = Math.floor((Date.now() - element.createdAt) / 60000)%>
+                <%incrementsOfTime = 'minutes'%>
+                <%}%>
+                <%let timestamp = `${commentedAt} ${incrementsOfTime} ago`  %>
+        <div class="comment">
+            <h6><%=element.author.name%></h6>
+           <p class="commentBody"><%=element.text%></p> 
+           <p class="commentTime"><%=timestamp%></p>
+           <p class="commentAction delete" >Delete</p>
+        </div>
+        <%})%>
+        <form action="http://localhost:3000/<%=currentUser.id%>/com/<%=currentCom.name%>/posts/<%=currentPost.id%>?_method=PUT" method="post" id="commentForm">
+            <input type="text" placeholder="..add comment" name="commentBody" id="commentInput">
+            <button type="submit">Comment</button>
+        </form>
+</div>

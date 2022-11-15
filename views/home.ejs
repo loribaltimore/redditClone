@@ -1,5 +1,7 @@
 <%layout('./partials/boilerplate.ejs')%>
-
+<script nonce='75'>
+    let currentUserId = '<%=currentUser.id%>';
+</script>
 <div>
     Welcome back, <%=currentUser.username%>
 </div>
@@ -8,13 +10,23 @@
     <div id="postsDiv">
         <h4 class="display-6" id="feedHeader">Daily Feed</h4>
         <%Object.keys(comFeedData).forEach(function (element, index) {%>
-            <div class="post">
-               <p><%=element%></p> 
-               <p><%=comFeedData[element].post.text%></p> 
-
+            <%if (index === 0) {%>
+               <%=element.split(' ').join('_')%>
+          <%}%> 
+            <div class="feed row" id=<%=element.split(' ').join('_')%>>
+                <div class="row col karma" id=<%=comFeedData[element].post.id%>>
+                    <h3 class="like liking">+</h3>
+                    <p class="liking"><%=comFeedData[element].post.likes%></p>
+                    <h3 class="dislike liking">-</h3>
+                </div>
+                <div class="col">
+                    <p><%=element%></p> 
+                    <p><%=comFeedData[element].post.text%></p> 
+                   <a href="http://localhost:3000/<%=currentUser.id%>/com/<%=comFeedData[element].name%>/posts/<%=comFeedData[element].post.id%>"> <button class="commentsBtn"><span class="commentsBtnTxt">Comments <%=comFeedData[element].post.comments.length%></span></button> </a>
+                </div>
+               
             </div>
-            <p class="post"><%=element.name%></p>
+            <p class="feed"><%=element.name%></p>
        <%})%>
     </div>
-    
 </div>

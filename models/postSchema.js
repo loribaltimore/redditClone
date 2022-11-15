@@ -32,6 +32,11 @@ let postSchema = new Schema({
         type: Number,
         default: 0
     },
+    comments: [
+        {
+            type: Object
+        }
+    ]
 });
 
 postSchema.method('removePost', async (auth) => {

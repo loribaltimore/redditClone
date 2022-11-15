@@ -50,7 +50,4 @@ module.exports.renderHome = async (req, res, next) => {
     res.render('home', {comFeedData});
 }
 
-////continue with creating a user
-///create home
-///create CRUD for posts
 
